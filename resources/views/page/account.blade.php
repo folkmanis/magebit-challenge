@@ -53,12 +53,6 @@
                                     </label>
                                     <div class="control flex items-center">
                                         <input data-test="login-password" name="password" class="form-input" required="" autocomplete="off" id="pass" title="Password" type="password">
-                                        <!--                                         <div class="cursor-pointer px-4" aria-label="Show Password">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5" width="24" height="24">
-                                                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
-                                                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
-                                            </svg>
-                                        </div> -->
                                     </div>
                                 </div>
                                 <div class="actions-toolbar flex justify-between pt-6 pb-2 items-center">
@@ -101,7 +95,7 @@
                                 <div class=" field field-reserved field-error">
                                     @error('firstname')
                                     <ul class="messages">
-                                        <li class="">
+                                        <li>
                                             {{ $message }}
                                         </li>
                                     </ul>
@@ -120,7 +114,7 @@
                                 <div class="field field-reserved field-error">
                                     @error('lastname')
                                     <ul class="messages">
-                                        <li class="">
+                                        <li>
                                             {{ $message }}
                                         </li>
                                     </ul>
@@ -137,16 +131,16 @@
 
                             <!-- Email -->
                             <div class="field">
-                                <label class="label" for="registerEmail">
+                                <label class="label" for="register_email">
                                     <span>Email</span>
                                 </label>
                                 <div class="control">
-                                    <input type="email" data-test="register-email" name="email" class="form-input" id="registerEmail" title="Email" value="{{ old('email') }}" />
+                                    <input type="email" data-test="register-email" name="register_email" class="form-input" id="register_email" title="Email" value="{{ old('register_email') }}" />
                                 </div>
                                 <div class="field field-reserved field-error">
-                                    @error('email')
+                                    @error('register_email')
                                     <ul class="messages">
-                                        <li class="">
+                                        <li>
                                             {{ $message }}
                                         </li>
                                     </ul>
@@ -156,16 +150,16 @@
 
                             <!-- Password -->
                             <div class="field">
-                                <label class="label" for="registerPassword">
+                                <label class="label" for="register_password">
                                     <span>Password</span>
                                 </label>
                                 <div class="control">
-                                    <input type="password" data-test="register-password" name="password" class="form-input" id="registerPassword" title="Password" />
+                                    <input type="password" data-test="register-password" name="register_password" class="form-input" id="register_password" title="Password" />
                                 </div>
                                 <div class="field field-reserved field-error">
-                                    @error('password')
+                                    @error('register_password')
                                     <ul class="messages">
-                                        <li class="">
+                                        <li>
                                             {{ $message }}
                                         </li>
                                     </ul>
@@ -184,7 +178,7 @@
                                 <div class="field field-reserved field-error">
                                     @error('password_confirmation')
                                     <ul class="messages">
-                                        <li class="">
+                                        <li>
                                             {{ $message }}
                                         </li>
                                     </ul>

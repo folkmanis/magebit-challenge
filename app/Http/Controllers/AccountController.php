@@ -32,13 +32,11 @@ class AccountController extends Controller
      */
     public function login(LoginRequest $request): RedirectResponse
     {
-        // implement login functionality
-
         $request->authenticate();
 
         $request->session()->regenerate();
 
-        return redirect()->intended(route('success'));
+        return redirect(route('success'));
     }
 
 
@@ -48,8 +46,6 @@ class AccountController extends Controller
      */
     public function logout(Request $request)
     {
-        // implement logout functionality
-
         Auth::logout();
 
         $request->session()->invalidate();
@@ -66,32 +62,29 @@ class AccountController extends Controller
      */
     public function register(Request $request)
     {
-        // implement register functionality
 
         $validator = Validator::make($request->all(), [
-            'firstname' => 'string|max:255',
-            'lastname' => 'string|max:255',
-            'email' => 'required|string|max:255|email|unique:' . User::class,
-            'password' => [
+            'firstname' => 'required|string|max:255',
+            'lastname' => 'required|string|max:255',
+            'register_email' => 'required|string|max:255|email|unique:' . User::class,
+            'register_password' => [
                 'required',
-                'confirmed',
                 Password::min(8)->letters()->numbers()
             ],
-            'password_confirmation' => ['same:password'],
-            'subscribed' => 'nullable',
+            'password_confirmation' => ['same:register_password'],
         ]);
 
         $validator->validate();
 
         $validated = $validator->validated();
 
-        $subscribed = $validated['subscribed'] == 1;
+        $subscribed = $request->subscribed == 1;
 
         $user = User::create([
             'firstname' => $validated['firstname'],
             'lastname' => $validated['lastname'],
-            'email' => $validated['email'],
-            'password' => Hash::make($validated['password']),
+            'email' => $validated['register_email'],
+            'password' => Hash::make($validated['register_password']),
             'subscribed' => $subscribed,
         ]);
 
@@ -107,8 +100,6 @@ class AccountController extends Controller
      */
     public function success(Request $request)
     {
-        // implement check if the user is authorized
-
         if (Auth::check()) {
             return view('page.success')
                 ->with([
