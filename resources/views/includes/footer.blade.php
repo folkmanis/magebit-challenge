@@ -60,15 +60,9 @@
             </div>
             <div class="bg-container border-t border-b border-container">
                 <div class="container py-6 mx-auto flex items-center sm:flex-row flex-col">
-                    <a href="#"
-                       class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-                        <span class="ml-3 text-xl">Custom</span>
+                    <a href="#" class="flex items-center md:justify-start justify-center text-primary-lighter">
+                        <span class="text-sm">© 2023 Pineapple Ltd.</span>
                     </a>
-                    <p>
-                        <small class="text-sm text-gray-800 sm:ml-6 sm:mt-0 mt-4">
-                            © 2023 Copyright
-                        </small>
-                    </p>
                 </div>
             </div>
         </div>

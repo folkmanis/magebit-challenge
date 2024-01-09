@@ -28,13 +28,13 @@ module.exports = {
 
             },
             fontFamily: {
-                sans: ["Segoe UI", "Helvetica Neue", "Arial", "sans-serif"]
+                sans: ['Montserrat', "sans-serif"]
             },
             colors: {
                 primary: {
-                    lighter: colors.blue['300'],
-                    "DEFAULT": colors.blue['800'],
-                    darker: colors.blue['900']
+                    lighter: "#14AE6D",
+                    "DEFAULT": "#0F8352",
+                    darker: "#0A5737"
                 },
                 secondary: {
                     lighter: colors.blue['100'],
@@ -52,12 +52,13 @@ module.exports = {
             },
             textColor: {
                 orange: colors.orange,
-                red: { ...colors.red,
+                red: {
+                    ...colors.red,
                     "DEFAULT": colors.red['500']
                 },
                 primary: {
-                    lighter: colors.gray['700'],
-                    "DEFAULT": colors.gray['800'],
+                    lighter: "#6D6D6D",
+                    "DEFAULT": "#02170E",
                     darker: colors.gray['900']
                 },
                 secondary: {
@@ -68,9 +69,9 @@ module.exports = {
             },
             backgroundColor: {
                 primary: {
-                    lighter: colors.blue['600'],
-                    "DEFAULT": colors.blue['700'],
-                    darker: colors.blue['800']
+                    lighter: "#14AE6D",
+                    "DEFAULT": "#0F8352",
+                    darker: "#0A5737"
                 },
                 secondary: {
                     lighter: colors.blue['100'],
@@ -85,9 +86,9 @@ module.exports = {
             },
             borderColor: {
                 primary: {
-                    lighter: colors.blue['600'],
-                    "DEFAULT": colors.blue['700'],
-                    darker: colors.blue['800']
+                    lighter: "#14AE6D",
+                    "DEFAULT": "#0F8352",
+                    darker: "#0A5737"
                 },
                 secondary: {
                     lighter: colors.blue['100'],
@@ -128,4 +129,4 @@ module.exports = {
         extend: {},
     },
     plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
-}
+};
