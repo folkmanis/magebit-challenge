@@ -30,7 +30,7 @@
                             @enderror
                             <fieldset class="fieldset login">
                                 <legend class="mb-3">
-                                    <h2 class="text-xl font-medium title-font text-primary">
+                                    <h2 class="font-medium title-font text-primary">
                                         Login
                                     </h2>
                                 </legend>
@@ -72,10 +72,10 @@
                     </div>
                 </div>
             </div>
-            <div class="card w-full md:w-1/2 my-8 md:my-0">
+            <div class="w-full md:w-1/2 my-8 md:my-0">
                 <h1 class="text-gray-900 page-title title-font">
                     <span class="base" data-ui-id="page-title-wrapper">
-                        New Customers
+                        Create New Customer Account
                     </span>
                 </h1>
                 <div class="card">
@@ -83,9 +83,9 @@
                         @csrf
                         <fieldset class="fieldset create">
                             <legend class="mb-3">
-                                <h3 class="text-xl font-medium title-font text-primary">
+                                <h2 class="title-font text-primary">
                                     Personal Information
-                                </h3>
+                                </h2>
                             </legend>
 
                             <!-- First Name -->
@@ -128,9 +128,9 @@
                         </fieldset>
                         <fieldset>
                             <legend class="mb-3">
-                                <h3 class="text-xl font-medium title-font text-primary">
+                                <h2 class="title-font text-primary">
                                     Sign-In Information
-                                </h3>
+                                </h2>
                             </legend>
 
                             <!-- Email -->
@@ -194,7 +194,7 @@
                             <div class="field choice">
                                 <input type="checkbox" data-test="register-newsletter" class="form-checkbox" name="subscribed" id="registerNewsletter" title="Register for Newsletter" value="1" />
                                 <label class="label" for="registerNewsletter">
-                                    <span>Sign up for newsletter</span>
+                                    <span class="capitalize">Sign up for newsletter</span>
                                 </label>
                             </div>
                         </fieldset>

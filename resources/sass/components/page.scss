@@ -15,8 +15,10 @@ body {
     }
 }
 
+.card-title {}
+
 .card {
-    @apply p-4 rounded-sm bg-container-lighter shadow;
+    @apply p-8 mt-4 rounded-sm bg-container-lighter shadow;
 }
 
 .actions-toolbar {
