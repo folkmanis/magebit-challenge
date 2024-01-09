@@ -51,12 +51,12 @@
                                     </label>
                                     <div class="control flex items-center">
                                         <input data-test="login-password" name="password" class="form-input" required="" autocomplete="off" id="pass" title="Password" type="password">
-                                        <div class="cursor-pointer px-4" aria-label="Show Password">
+                                        <!--                                         <div class="cursor-pointer px-4" aria-label="Show Password">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5" width="24" height="24">
                                                 <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
                                                 <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
                                             </svg>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                                 <div class="actions-toolbar flex justify-between pt-6 pb-2 items-center">
@@ -158,7 +158,7 @@
                                     <span>Password</span>
                                 </label>
                                 <div class="control">
-                                    <input type="password" data-test="register-password" name="password" class="form-input" id="registerPassword" title="Password" value="{{ old('password') }}" />
+                                    <input type="password" data-test="register-password" name="password" class="form-input" id="registerPassword" title="Password" />
                                 </div>
                                 <div class="field field-reserved field-error">
                                     @error('password')
@@ -177,11 +177,11 @@
                                     <span>Confirm Password</span>
                                 </label>
                                 <div class="control">
-                                    <input type="password" data-test="register-passwordConfirm" name="password_confirmation" class="form-input" id="registerPasswordConfirm" title="Password Confirm" value="{{ old('password_confirmation') }}" />
+                                    <input type="password" data-test="register-passwordConfirm" name="password_confirmation" class="form-input" id="registerPasswordConfirm" title="Password Confirm" />
                                 </div>
                                 <div class="field field-reserved field-error">
-                                    @error('email')
-                                    <ul class="password_confirmation">
+                                    @error('password_confirmation')
+                                    <ul class="messages">
                                         <li class="">
                                             {{ $message }}
                                         </li>
@@ -192,7 +192,7 @@
 
                             <!-- Register newsletter -->
                             <div class="field choice">
-                                <input type="checkbox" data-test="register-newsletter" class="" name="subscribed" id="registerNewsletter" title="Register for Newsletter" value="1" />
+                                <input type="checkbox" data-test="register-newsletter" class="form-checkbox" name="subscribed" id="registerNewsletter" title="Register for Newsletter" value="1" />
                                 <label class="label" for="registerNewsletter">
                                     <span>Sign up for newsletter</span>
                                 </label>

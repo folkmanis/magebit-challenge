@@ -10,7 +10,8 @@ fieldset {
     }
 
     .field.field-reserved ul:last-of-type {
-        @apply -mb-6 pb-1 /* The sum has to match the value set above for field.field-reserved */
+        @apply -mb-6 pb-1
+        /* The sum has to match the value set above for field.field-reserved */
     }
 
     .field.field-reserved ul {
@@ -42,12 +43,12 @@ fieldset {
         @apply text-primary text-xl mb-3
     }
 
-    legend + br {
+    legend+br {
         @apply hidden
     }
 }
 
-fieldset ~ fieldset {
+fieldset~fieldset {
     @apply mt-8
 }
 
@@ -57,6 +58,14 @@ fieldset ~ fieldset {
 .form-multiselect,
 .form-textarea {
     @apply border border-gray-300 rounded-md shadow-sm;
+
+    &:focus {
+        @apply border-primary-lighter ring ring-primary ring-opacity-50;
+    }
+}
+
+.form-checkbox {
+    @apply border border-gray-300 rounded-md shadow-sm accent-primary;
 
     &:focus {
         @apply border-primary-lighter ring ring-primary ring-opacity-50;

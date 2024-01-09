@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rules\Password;
 
 class AccountController extends Controller
@@ -67,25 +68,30 @@ class AccountController extends Controller
     {
         // implement register functionality
 
-        $request->validate([
-            'firstname' => 'required|string|max:255',
-            'lastname' => 'required|string|max:255',
+        $validator = Validator::make($request->all(), [
+            'firstname' => 'string|max:255',
+            'lastname' => 'string|max:255',
             'email' => 'required|string|max:255|email|unique:' . User::class,
             'password' => [
                 'required',
                 'confirmed',
                 Password::min(8)->letters()->numbers()
             ],
-            // 'subscribed' => 'optional',
+            'password_confirmation' => ['same:password'],
+            'subscribed' => 'nullable',
         ]);
 
-        $subscribed = $request->subscribed == 1;
+        $validator->validate();
+
+        $validated = $validator->validated();
+
+        $subscribed = $validated['subscribed'] == 1;
 
         $user = User::create([
-            'firstname' => $request->firstname,
-            'lastname' => $request->lastname,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
+            'firstname' => $validated['firstname'],
+            'lastname' => $validated['lastname'],
+            'email' => $validated['email'],
+            'password' => Hash::make($validated['password']),
             'subscribed' => $subscribed,
         ]);
 

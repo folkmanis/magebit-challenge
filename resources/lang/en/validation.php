@@ -150,7 +150,7 @@ return [
             'email' => 'Please provide a valid e-mail address',
         ],
         'password_confirmation' => [
-            'confirmed' => 'This field value must be the same as "Password".'
+            'same' => 'This field value must be the same as "Password".'
         ]
     ],
 
