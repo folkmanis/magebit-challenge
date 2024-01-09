@@ -23,8 +23,10 @@
                     <div aria-labelledby="block-customer-login-heading">
                         <form class="form form-login" action="{{ url('login') }}" method="post" id="customer-login-form">
                             @csrf
+
+                            <!-- Login error -->
                             @error('email')
-                            <div>
+                            <div class="my-4 text-2xl">
                                 {{ $message }}
                             </div>
                             @enderror
