@@ -92,7 +92,7 @@ class AccountController extends Controller
         Auth::login($user);
 
         return redirect('/')
-            ->with('registration', "User registered successfully!");
+            ->with('status', "User registered successfully!");
     }
 
     /**

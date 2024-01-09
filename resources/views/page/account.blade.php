@@ -7,6 +7,12 @@
             Customer Login
         </span>
     </h1>
+    @if(session('status'))
+    <div>
+        {{ session('status') }}
+    </div>
+    @endif
+
 </div>
 
 <div class="columns">
